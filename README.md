@@ -60,5 +60,5 @@ npx hardhat run scripts/deploy.js --network arbitrumOne
 
 #### // npx hardhat verify --network mainnet DEPLOYED_CONTRACT_ADDRESS "Constructor argument 1”.  
 
-npx hardhat verify --network arbitrumOne 0x0E5B4f50b4c09caF0441C0fe77E2b65xxxxxxxx
+npx hardhat verify --network arbitrumOne 0x0E5B4f50b4c09caF0441C0fe77E2b65xxxxxxx
 
