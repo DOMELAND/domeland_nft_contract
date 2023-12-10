@@ -28,3 +28,37 @@ git push -u origin main
 
 …or import code from another repository
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+
+# how to deploy hardhat arbitrum and verify
+
+https://docs.arbitrum.io/for-devs/quickstart-solidity-hardhat    #quick deploy
+
+https://blog.chain.link/how-to-verify-smart-contract-on-etherscan-hardhat/      # hardhat ethscan cli verify、
+
+https://hardhat.org/hardhat-runner/docs/guides/deploying.    
+
+
+https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify
+
+https://betterprogramming.pub/how-to-setup-your-hardhat-environment-af70b39c16d1.  #  auto verify
+
+https://hicoldcat.com/posts/blockchain/how-to-become-a-web3-developer-in-2023/      # solidity development refer
+
+
+https://docs.arbitrum.io/for-devs/quickstart-solidity-hardhat
+
+
+# cli flow
+
+npm install @openzeppelin/contracts
+npm install --save-dev @nomicfoundation/hardhat-toolbox
+
+#### // modify hardhat.config.ts
+npx hardhat compile
+npx hardhat run scripts/deploy.js --network arbitrumOne
+
+#### // npx hardhat verify --network mainnet DEPLOYED_CONTRACT_ADDRESS "Constructor argument 1”.  
+
+npx hardhat verify --network arbitrumOne 0x0E5B4f50b4c09caF0441C0fe77E2b65xxxxxxxx
+

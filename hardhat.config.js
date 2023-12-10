@@ -1,19 +1,25 @@
 require('dotenv').config(); //all the key value pairs are being made available due to this lib
 require("@nomicfoundation/hardhat-toolbox");
+require("@nomicfoundation/hardhat-verify");
+
+// const GOERLI_TESTNET_PRIVATE_KEY = '';
+const ARBITRUM_MAINNET_TEMPORARY_PRIVATE_KEY = 'XXXXXXXXX_ArbitrumOne_Private_key';
+
 
 module.exports = {
-  defaultNetwork: "arbgoerli",
+  defaultNetwork: "arbitrumOne",
   networks: {
     hardhat: {
     },
-    arbgoerli: {
-      url: `${process.env.ARB_GOERLI_URL_API}`,
-      accounts: [`0x${process.env.ARBGOERLI_PRIVATE_KEY}`],
+    arbitrumOne: {
+      url: 'https://arb1.arbitrum.io/rpc',
+      accounts: [ARBITRUM_MAINNET_TEMPORARY_PRIVATE_KEY],
     },
-    goerli: {
-      url: `${process.env.GOERLI_URL}`,
-      accounts: [`0x${process.env.GOERLI_PRIVATE_KEY}`],
-    }
+    arbitrumGoerli: {
+      url: 'https://goerli-rollup.arbitrum.io/rpc',
+      chainId: 421613,
+      //accounts: [GOERLI_TESTNET_PRIVATE_KEY]
+    },
   },
   solidity: {
     version: "0.8.18",
@@ -29,7 +35,12 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      arbitrumGoerli: 'AQ13WPUK52XY53VBUXYB47Z7WJCT2EUVC5'
+      arbitrumOne: 'AQ13WPUK52XY53VBUXYB47Z7WJCT2EUVC5'
+    },
+    sourcify: {
+      // Disabled by default
+      // Doesn't need an API key
+      enabled: true
     }
   },
 }
